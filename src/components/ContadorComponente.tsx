@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
+import "@/styles/contador.css"
 
 function ContadorComponente({valorInicial = 0}) {
     const [contador,setContador] = useState(valorInicial);
@@ -14,19 +13,22 @@ function ContadorComponente({valorInicial = 0}) {
         setContador(contador - 1);
     }
 
-    const resetear = () => {
-        setContador(valorInicial);
-    }
-
     return ( 
-        <div className="container">
-            <h1>Contador {contador}</h1>
-            <button onClick={incrementar} className="btn btn-secondary">Incrementar</button>
-            <button onClick={decrementar} className="btn btn-warning"> Decrementar</button>
-            <button onClick={resetear} className="btn btn-success">Resetear</button>
-
-
-        </div>
+        <div className="container text-center ">
+              <h1>Cantidad</h1>
+            <div className="d-flex justify-content-center">
+                  <div className="cantidad-class ">
+                {contador}
+            </div>
+            </div>
+          
+            <button onClick={incrementar} className="btn btn-secondary boton">
+             Incrementar
+            </button>
+             <button onClick={decrementar} className="btn btn-warning boton">
+           Decrementar
+            </button>
+    </div>
 
      );
 }
